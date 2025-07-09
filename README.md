@@ -67,8 +67,8 @@ TokenB:     0x7d0f0051a7d02aa6cc870254cf94b9735a43d092
 ### Instalación
 ```bash
 # Clonar repositorio
-git clone https://github.com/TU_USUARIO/simple-swap-dapp-vanilla.git
-cd simple-swap-dapp-vanilla
+git clone https://github.com/kamus22/tp-modulo4-wilver-arriaza.git
+cd tp-modulo4-wilver-arriaza-main
 
 # Instalar dependencias para tests
 npm install
