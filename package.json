@@ -1,0 +1,40 @@
+{
+  "name": "simple-swap-dapp",
+  "version": "1.0.0",
+  "description": "A decentralized exchange (DEX) frontend for SimpleSwap smart contract",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "frontend:install": "cd frontend && npm install",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "start": "npm run frontend:dev"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "hardhat",
+    "defi",
+    "dex",
+    "amm",
+    "swap"
+  ],
+  "author": "Wilver Arriaza",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "ethers": "^6.9.0"
+  }
+}

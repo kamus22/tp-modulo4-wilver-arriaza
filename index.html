@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleSwap DEX - Vanilla</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.9.0/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="container">
+                <h1>🔄 SimpleSwap DEX</h1>
+                <p>Decentralized Token Exchange on Sepolia Testnet</p>
+                <p>Author: Wilver Arriaza</p>
+                <!-- Connect Wallet Section -->
+                <div id="connect-section" class="connect-section">
+                    <button id="connect-btn" class="connect-btn">
+                        Connect Wallet
+                    </button>
+                    <p class="network-info">Make sure you're connected to Sepolia testnet</p>
+                    <div class="setup-info">
+                        <p><strong>Need help getting started?</strong></p>
+                        <p>📍 Network: Sepolia Testnet (auto-switching enabled)</p>
+                        <p>💧 Get ETH: <a href="https://sepoliafaucet.com/" target="_blank" rel="noopener noreferrer">Sepolia Faucet</a></p>
+                        <p>🪙 Get Tokens: Use mint function on <a href="https://sepolia.etherscan.io/address/0xb2386ba07061960efff179939b620d345400a446#writeContract" target="_blank" rel="noopener noreferrer">TokenA</a> and <a href="https://sepolia.etherscan.io/address/0x7d0f0051a7d02aa6cc870254cf94b9735a43d092#writeContract" target="_blank" rel="noopener noreferrer">TokenB</a></p>
+                        <p>🔗 View DEX: <a href="https://sepolia.etherscan.io/address/0x071251ee45b08f0b6d978b87b6a1350aa4d22ef4" target="_blank" rel="noopener noreferrer">SimpleSwap on Etherscan</a></p>
+                    </div>
+                </div>
+                
+                <!-- Main App Content -->
+                <div id="app-content" class="app-content" style="display: none;">
+                    <!-- Account Info -->
+                    <div class="account-info">
+                        <p id="account-display">Connected: </p>
+                    </div>
+                    
+                    <!-- Balances Section -->
+                    <div class="balances-section">
+                        <h3>Your Balances</h3>
+                        <div class="balance-row">
+                            <span>Token A (TKNA): <span id="balance-a">0.0000</span></span>
+                        </div>
+                        <div class="balance-row">
+                            <span>Token B (TKNB): <span id="balance-b">0.0000</span></span>
+                        </div>
+                        <button id="refresh-balances" class="refresh-btn">🔄 Refresh Balances</button>
+                    </div>
+                    
+                    <!-- Price Section -->
+                    <div class="price-section">
+                        <h3>Current Price</h3>
+                        <p>1 TKNA = <span id="current-price">0.000000</span> TKNB</p>
+                    </div>
+                    
+                    <!-- Swap Section -->
+                    <div class="swap-section">
+                        <h3>Swap Tokens</h3>
+                        
+                        <div class="swap-form">
+                            <div class="input-group">
+                                <label for="from-token">From:</label>
+                                <select id="from-token" class="token-select">
+                                    <option value="A">Token A (TKNA)</option>
+                                    <option value="B">Token B (TKNB)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="swap-amount">Amount:</label>
+                                <input
+                                    type="number"
+                                    id="swap-amount"
+                                    class="amount-input"
+                                    placeholder="0.0"
+                                    step="0.01"
+                                    min="0"
+                                >
+                            </div>
+                            
+                            <div class="swap-arrow">⬇</div>
+                            
+                            <div class="input-group">
+                                <label>To:</label>
+                                <div id="to-token" class="to-token">
+                                    Token B (TKNB)
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Expected Output:</label>
+                                <div id="expected-output" class="expected-output">
+                                    0.000000
+                                </div>
+                            </div>
+                            
+                            <button id="swap-btn" class="swap-btn" disabled>
+                                Swap Tokens
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="error-message" class="error-message" style="display: none;">
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <div id="success-message" class="success-message" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
