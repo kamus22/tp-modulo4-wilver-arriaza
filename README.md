@@ -1,4 +1,4 @@
-# 🔄 SimpleSwap DEX - Frontend Vanilla
+# 🔄 SimpleSwap DEX
 
 Un intercambio descentralizado (DEX) desarrollado con HTML5, CSS3 y JavaScript vanilla, desplegado en GitHub Pages con testing completo en Hardhat.
 
